@@ -17,5 +17,7 @@ document.write(`division of a and b = ${a / b}<br>`);
 document.write(`a to the power d = ${a ** d}<br>`); /* '**' is used for power */
 document.write(`sum of 0.1 and 0.2 = ${0.1 + 0.2}<br>`); // this is due to floating point
 document.write(`100000 to the power 1000000000 = ${100000 ** 1000000000}<br>`); // infinity and -infinity are number
-document.write(`division of number and string = ${10 / 'dog'}<br>`); // NaN means not a number
+document.write(`division of number and string = ${10 / 'dog'}<br>`); // NaN means not a number; Nan is a number
+// eslint-disable-next-line no-console
+console.log(typeof (1 / 'dog'));
 document.write(`reminder of a / d = ${a % d}<br>`);
