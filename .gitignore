@@ -1,16 +1,1 @@
-node_modules/.bin/acorn
-node_modules/.bin/eslint
-node_modules/.bin/eslint-config-prettier-check
-node_modules/.bin/esparse
-node_modules/.bin/esvalidate
-node_modules/.bin/js-yaml
-node_modules/.bin/jsesc
-node_modules/.bin/loose-envify
-node_modules/.bin/mkdirp
-node_modules/.bin/parser
-node_modules/.bin/prettier
-node_modules/.bin/rimraf
-node_modules/.bin/semver
-node_modules/.bin/which
-node_modules/@babel/code-frame/LICENSE
-node_modules/@babel/code-frame/README.md
+
