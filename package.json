@@ -1,0 +1,19 @@
+{
+  "name": "assignments",
+  "version": "1.0.0",
+  "description": "Daily work",
+  "main": "external.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aditya-qlik/Assignments.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aditya-qlik/Assignments/issues"
+  },
+  "homepage": "https://github.com/aditya-qlik/Assignments#readme"
+}
