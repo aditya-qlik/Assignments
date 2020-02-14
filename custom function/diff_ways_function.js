@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 /* eslint-disable no-console */
 
 // common way ..... using function keyword
@@ -29,10 +30,10 @@ but the function expressions are not hoisted
 
 // Arrow Functions
 const milesToKM = miles => miles * 1.60934; // can be used from console or --> console.log(`10 miles to km : ${milesToKM(10)}`);
-// function milesToKM (miles){
-//     const km = miles * 1.60934;
-//     return km;
-// }
+// function milesToKM (miles){      |
+//     const km = miles * 1.60934;  | this is the alternate code for the milesToKM arrow function
+//     return km;                   |
+// }                                |
 
 /*
 **************NOTES************
@@ -43,17 +44,17 @@ In an arrow function
 */
 
 const add = (a, b = 3) => a + b;
-// function add(a,b=3){
-//     const sum = a+b;
-//     return sum;
-// }
+// function add(a,b=3){  |
+//     const sum = a+b;  | this is alternate for add arrow function
+//     return sum;       |
+// }                     |
 
-// function personDetail(fname, lname, old) {
-//         const person = {
-//                 name: `${fname} ${lname}`,
-//                 age: old,
-//         };
-//         return person;
+// function personDetail(fname, lname, old) {  |
+//         const person = {                    |
+//                 name: `${fname} ${lname}`,  |
+//                 age: old,                   | this is the alternate code for personDetail arrow function
+//         };                                  |
+//         return person;                      |
 // }
 const personDetail = (fname, lname, old) => ({ name: `${fname} ${lname}`, age: old });
 /*
@@ -67,3 +68,35 @@ if not done so JS gets confused if the {} are for function block or Object creat
         console.log(`IIFE function ..... Technically a Anonymous function `);
         return `Inside a ${iife} function`;
 })('IIFE'); // <-- The argument is passed in the outer parenthesis
+
+/*
+**********NOTE*********
+Functions living inside a object are called as methods 
+*/
+// Methods!!!
+const person = {
+        name: 'Aditya',
+        // Method!!
+        sayHi: function() {
+                console.log(`Hi ${this.name}`);
+                return `hi ${this.name}`;
+        },
+        // Shorthand
+        yellHi() {
+                console.log(`HI ${this.name.toUpperCase()}`);
+                return `HI ${this.name.toUpperCase()}`;
+        },
+        // Arrow function
+        wispierHi: () => console.log(`hi ${this.name.toLowerCase()}`),
+};
+
+/* *******callback function********* */
+// click callback
+const btn = document.querySelector('.clickMe');
+console.log(btn);
+btn.addEventListener('click', person.sayHi); // the ' this ' in method sayHi uses name of the button instead of the name of the object
+
+// timer callback
+setTimeout(function() {
+        console.log(`done!!!`);
+}, 1000);
