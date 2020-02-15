@@ -11,5 +11,5 @@ document.body.innerHTML = `<div><center>
 <h3></h3>
 </center></div>`;
 console.log("document.querySelector('div') returns ");
-const op = document.querySelector('div');
-console.log(op);
+const out = document.querySelector('div');
+console.log( out );
