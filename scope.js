@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable*/
 var name = 'Aditya';
 let age = 27;
 const bloodGroup = 'O+';
@@ -50,3 +50,26 @@ for(let j=0; j<10 ;j++){
     console.log(`inside for loop j = ${j}`);
 }
 // console.log(`outside the for loop j = ${j}`); it shows error whish is good as it shows its block scoped
+const dog = 'Babbles';
+function log(){
+    console.log(dog);
+}
+function logDog(dog){
+    console.log(dog);
+}
+function logDog1(){
+    const dog = 'Scooby';
+    log();
+    logDog(dog);
+    logDog('String')
+}
+logDog1();
+// js is lexical scoped (static scope ) --> its doesn't matter where the function is is called but where the function is defined
+window.iAmGlobal='Adi';
+function sayHi(name){
+    function yell(){
+        console.log(name.toUpperCase());
+    }
+}
+sayHi('Adi');
+yell(); // its gives error because like variables functions are also function scoped
