@@ -1,0 +1,65 @@
+/* eslint-disable */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures!!</title>
+</head>
+<body>
+    <script>
+        function outer() {
+                const outerVar = 'I am outer var';
+                function inner() {
+                        const innerVar = 'I am inner var';
+                        console.log(outerVar);
+                        console.log(innerVar);
+                }
+                return inner;
+        }
+        const innerFn = outer();
+        console.log(innerFn);
+        innerFn();
+        function creatGreeting(greeting = '') {
+                const myGreet = greeting.toUpperCase();
+                return function(name) {
+                        return `${myGreet} ${name}`;
+                };
+        }
+        const sayHello = creatGreeting('hello');
+        const sayHey = creatGreeting('hey');
+        console.log(sayHello('Adi'));
+        console.log(sayHey('Alok'));
+        console.log(sayHello('Noopur'));
+
+        function createGame(gameName) {
+                let score = 0;
+                return function win() {
+                        score++;
+                        return `Your game ${gameName} score is ${score}`;
+                };
+        }
+        const hockeyGame = createGame('Hockey');
+        const footballGame = createGame('Football');
+        console.log(hockeyGame());
+        console.log(footballGame());
+        console.log(hockeyGame());
+        console.log(footballGame());
+        console.log(hockeyGame());
+        console.log(footballGame());
+        console.log(hockeyGame());
+        console.log(footballGame());
+        console.log(hockeyGame());
+        console.log(footballGame());
+        console.log(hockeyGame());
+        console.log(footballGame());
+        console.log(hockeyGame());
+        console.log(footballGame());
+        console.log(hockeyGame());
+        console.log(footballGame());
+        console.log(hockeyGame());
+        console.log(footballGame());
+        
+    </script>
+</body>
+</html>
