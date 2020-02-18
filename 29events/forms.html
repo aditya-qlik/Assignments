@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        div {
+            background-color: skyblue;
+            max-width: 100%;
+        }
+
+        input[type=text] {
+            max-width: 100%;
+            padding: 10px 200px;
+            margin: 8px 0;
+            border-radius: 4px;
+        }
+
+        input[type=email] {
+            max-width: 100%;
+            padding: 10px 200px;
+            margin: 8px 0;
+            border-radius: 4px;
+        }
+
+        input:focus {
+            border: 3px solid rgb(25, 0, 255);
+        }
+
+        button[type=submit] {
+            background-color: rgb(72, 255, 0);
+            border: outset;
+            color: rgb(0, 0, 0);
+            padding: 16px 32px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+    </style>
+    <title>Form!!</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <a class="wes" href="https://wesbos.com">Wes Bos</a>
+        <center>
+            <form name="signUp">
+                <label for="name"><strong>Enter Name:</strong></label><br>
+                <input type="text" name="name" id="name" placeholder="Your Name...."><br>
+                <label for="email"><strong>Enter Email:</strong></label><br>
+                <input type="email" name="email" id="email" placeholder="Your email..."><br>
+                <input type="checkbox" name="agree" id="agree">
+                <label for="agree">I agree to the term and conditions</label>
+                <hr>
+                <button type="submit">Submit</button>
+        </center>
+        <center>
+            </form>
+        </center>
+    </div>
+    <script src="./forms.js"></script>
+</body>
+
+</html>
