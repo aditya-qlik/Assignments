@@ -32,14 +32,19 @@ pic.classList.add('open');
 console.log(pic.classList);
 pic.classList.remove('cool');
 console.log(pic.classList);
-// pic.classList.add('round');
-// console.log(pic.classList);
+pic.classList.add('round');
+console.log(pic.classList);
 function toggleRound(){
     pic.classList.toggle('round');
 }
 pic.addEventListener('click', toggleRound);
-pic.width = 300;
+pic.width = 600;
 console.log(pic.naturalWidth);
 pic.addEventListener('load', function(){
     console.log(pic.naturalWidth);
+});
+const custom = document.querySelector('.custom');
+console.log(custom.dataset);
+custom.addEventListener('click',function(){
+    alert(`you clicked ${custom.dataset.name}`);
 });
