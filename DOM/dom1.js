@@ -1,3 +1,4 @@
+/* eslint-disable */
 const d = document.querySelector('p');
 console.log(d);
 const divs = document.querySelectorAll('div');
@@ -19,3 +20,26 @@ console.log(heading.textContent);
 console.log(heading.innerText);
 console.log(heading.innerHTML);
 console.log(heading.outerHTML);
+const pizzaList = document.querySelector('.pizza');
+console.log(pizzaList.textContent);
+pizzaList.textContent = `${pizzaList.textContent}  🍕`;
+pizzaList.insertAdjacentText('afterBegin', '🍕');
+
+//Classes!!....
+const pic = document.querySelector(".nice");
+console.log(pic.classList);
+pic.classList.add('open');
+console.log(pic.classList);
+pic.classList.remove('cool');
+console.log(pic.classList);
+// pic.classList.add('round');
+// console.log(pic.classList);
+function toggleRound(){
+    pic.classList.toggle('round');
+}
+pic.addEventListener('click', toggleRound);
+pic.width = 300;
+console.log(pic.naturalWidth);
+pic.addEventListener('load', function(){
+    console.log(pic.naturalWidth);
+});
