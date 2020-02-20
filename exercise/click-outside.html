@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 20px;
+            padding: 2rem;
+        }
+
+        .cards img {
+            width: 100%;
+        }
+
+        .card {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .card h2 {
+            color: black;
+        }
+
+        .modal-outer {
+            display: grid;
+            background: hsla(83, 90%, 74%, 0.7);
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            align-items: center;
+            /* Hide this until needed */
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .modal-outer img {
+            width: 100%;
+        }
+
+        .modal-outer.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-inner {
+            max-width: 600px;
+            min-width: 400PX;
+            min-height: 200px;
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+        }
+    </style>
+    <title>Click-Outside!!!</title>
+</head>
+
+<body>
+    <div class="cards">
+        <div class="cards" data-description="This is 1st card">
+            <img src="https://picsum.photos/200?random=1" alt="Random pic">
+            <h2>First Image</h2>
+            <button>Learn more ➡ </button>
+        </div>
+        <div class="cards" data-description="This is 2nd card">
+            <img src="https://picsum.photos/200?random=2" alt="Random pic">
+            <h2>Second Image</h2>
+            <button>Learn more ➡ </button>
+        </div>
+        <div class="cards" data-description="This is 3rd card">
+            <img src="https://picsum.photos/200?random=3" alt="Random pic">
+            <h2>Third Image</h2>
+            <button>Learn more ➡ </button>
+        </div>
+        <div class="cards" data-description="This is 4th card">
+            <img src="https://picsum.photos/200?random=4" alt="Random pic">
+            <h2>Fourth Image</h2>
+            <button>Learn more ➡ </button>
+        </div>
+    </div>
+    <div class="modal-outer">
+        <div class="modal-inner">
+            TRIAL
+        </div>
+    </div>
+    <script src="./click-outside.js"></script>
+</body>
+
+</html>
