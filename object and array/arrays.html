@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const name = ['aditya', 'alok', 'Noopur', 'aditya', 'alok', 'Noopur'];
+        console.log(name.length);
+        console.log(name[name.length - 1]);
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+        // mutable methods- DO CHANGE ORIGINAL DATA
+        numbers.reverse();
+        console.log(numbers);
+        // Immutable methods - THEY DO NOT CHANGE THE ORIGINAL METHOD
+        const pizzaSlice = numbers.slice(2, 4);
+        console.log(pizzaSlice);
+        console.log(numbers);
+    </script>
+</body>
+
+</html>
