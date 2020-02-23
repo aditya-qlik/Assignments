@@ -10,9 +10,9 @@
 
 <body>
     <script>
-        const name = ['aditya', 'alok', 'Noopur', 'aditya', 'alok', 'Noopur'];
-        console.log(name.length);
-        console.log(name[name.length - 1]);
+        const names = ['aditya', 'alok', 'Noopur', 'aditya', 'alok', 'Noopur'];
+        console.log(names.length);
+        console.log(names[names.length - 1]);
         const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
         // mutable methods- DO CHANGE ORIGINAL DATA
@@ -22,6 +22,12 @@
         const pizzaSlice = numbers.slice(2, 4);
         console.log(pizzaSlice);
         console.log(numbers);
+
+        const comment =[{text: 'cool aditya', id:101},{text:'Noopur is awesome', id:102},{text:'Alok is my brother', id:103},{text:'Aditya is cool', id:104},{text:'Naruto is ninja', id:105}];
+        const alokIndex = names.findIndex(name=>name==='alok')
+        console.log(alokIndex);
+        console.log(names[alokIndex]);
+        
     </script>
 </body>
 
