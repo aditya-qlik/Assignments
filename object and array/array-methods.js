@@ -161,3 +161,53 @@ function findByWord(word) {
                 return singleFeedback.comment.includes(word);
         };
 }
+
+const burgRating = feedback.find(findByWord('burg'));
+console.log(burgRating);
+
+const smoothieRating = feedback.find(findByWord('Smoothie'));
+console.log(smoothieRating);
+
+function filterByMinRating(minRating) {
+        return function(singleFeedback) {
+                return singleFeedback.rating > minRating;
+        };
+}
+
+// const goodReviews = feedback.filter(singleFeedback => singleFeedback.rating > 2);
+// console.table(goodReviews);
+
+const goodReviews = feedback.filter(filterByMinRating(2));
+console.table(goodReviews);
+
+const burgsRating = feedback.filter(findByWord('burg'));
+console.table(burgsRating);
+
+const goodRatings = feedback.filter(singleFeedback => singleFeedback.rating !== 1);
+console.table(goodRatings);
+
+const enoughOfAtLeastOneMeat = Object.values(meats).some(meatValue => meatValue >= 5);
+console.log(enoughOfAtLeastOneMeat);
+
+const enoughOfEveryMeat = Object.values(meats).every(meatValue => meatValue >= 3);
+console.log(enoughOfEveryMeat);
+
+const numbers = [1, 2, 100, 3, 200, 400, 155];
+let sortedNumbers = numbers.sort();
+console.log(sortedNumbers);
+sortedNumbers = numbers.sort((firstNumber, secondNumber) => firstNumber - secondNumber);
+console.log(sortedNumbers); // sort() works on string
+
+console.log(toppings.sort()); // sorts them alphabetically;
+
+function numberSort(num1, num2) {
+        return num1 - num2;
+}
+console.log(orderTotals.sort(numberSort));
+
+const productSortedByPrice = Object.entries(prices).sort((first, second) => {
+        const firstPrice = first[1];
+        const secondPrice = second[1];
+        return firstPrice - secondPrice;
+});
+console.table(Object.fromEntries(productSortedByPrice));
