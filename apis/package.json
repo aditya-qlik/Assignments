@@ -1,0 +1,17 @@
+{
+  "name": "foodrecipes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "apis.js",
+  "scripts": {
+    "start": "parcel CORS-Recipes.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "browserslist": [
+    "last 1 chrome versions"
+  ]
+}
