@@ -117,74 +117,55 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"CORS-Recipes.js":[function(require,module,exports) {
+/* eslint-disable no-console */
+const baseEndpoint = 'http://www.recipepuppy.com/api';
+const proxy = 'https://cors-anywhere.herokuapp.com/';
+const form = document.querySelector('form.search');
+const recipesGrid = document.querySelector('.recipes');
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
+async function fetchRecipes(query) {
+  const response = await fetch(`${proxy}${baseEndpoint}?q=${query}`);
+  const data = await response.json();
+  return data;
 }
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
+function displayRecipes(recipes) {
+  console.log('Creating HTML');
+  const html = recipes.map(recipe => `<div class="recipe">
+      <h2>${recipe.title}</h2>
+      <p>${recipe.ingredients}</p>
+      ${recipe.thumbnail && `<img src="${recipe.thumbnail}" alt="${recipe.title}"/>`}
+      <a href="${recipe.href}">View Recipe →</a>
+    </div>`);
+  recipesGrid.innerHTML = html.join('');
 }
 
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+async function fetchAndDisplay(query) {
+  // turn the form off
+  form.submit.disabled = true; // submit the search
+
+  const recipes = await fetchRecipes(query);
+  console.log(recipes);
+  form.submit.disabled = false;
+  displayRecipes(recipes.results);
 }
 
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
+async function handleSubmit(event) {
+  event.preventDefault();
+  const element = event.currentTarget;
+  console.log(element.query.value);
+  fetchAndDisplay(form.query.value);
 }
 
-var cssTimeout = null;
+form.addEventListener('submit', handleSubmit); // fetchAndDisplay('pizza');
 
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+/*
+ * CO: Cross Origin ...... originally (github.com 👈No!(data sharing) No!👉 wesbos.com)
+ * R:
+ * S:
+ */
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -212,7 +193,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65322" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49412" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -388,5 +369,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/CORS-Recipes.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","CORS-Recipes.js"], null)
+//# sourceMappingURL=/CORS-Recipes.f5303206.js.map
