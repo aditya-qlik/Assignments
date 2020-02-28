@@ -1,0 +1,18 @@
+{
+  "name": "dadjokes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "buttonText.js",
+  "scripts": {
+    "start": "parcel dad-jokes.html",
+    "build": "parcel build dad-jokes.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "browserslist": [
+    "last 1 chrome versions"
+  ]
+}
