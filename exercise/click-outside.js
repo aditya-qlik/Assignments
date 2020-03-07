@@ -24,7 +24,8 @@ outerModal.addEventListener('click', function(event) {
                 closeModal();
         }
 });
-outerModal.addEventListener('keyDown', event => {
+window.addEventListener('keyDown', event => {
+        console.log(event.key);
         if (event.key === 'Escape') {
                 closeModal();
         }
